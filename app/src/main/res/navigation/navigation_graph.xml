@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/folderListFragment">
+
+    <fragment
+        android:id="@+id/folderListFragment"
+        android:name="com.example.memoapp.FolderListFragment"
+        android:label="FolderListFragment"
+        tools:layout="@layout/folder_list">
+        <action
+            android:id="@+id/action_folderListFragment_to_memoListFragment"
+            app:destination="@id/memoListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/memoListFragment"
+        android:name="com.example.memoapp.MemoListFragment"
+        android:label="MemoListFragment"
+        tools:layout="@layout/memo_list" >
+        <action
+            android:id="@+id/action_memoListFragment_to_folderListFragment"
+            app:destination="@id/folderListFragment" />
+        <action
+            android:id="@+id/action_memoListFragment_to_editMemoFragment"
+            app:destination="@id/editMemoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editMemoFragment"
+        android:name="com.example.memoapp.EditMemoFragment"
+        android:label="EditMemoFragment"
+        tools:layout="@layout/memo_edit">
+        <action
+            android:id="@+id/action_editMemoFragment_to_memoListFragment"
+            app:destination="@id/memoListFragment" />
+    </fragment>
+</navigation>
